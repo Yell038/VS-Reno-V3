@@ -4,6 +4,10 @@ function onUpdate()
     setTextFont('timeTxt', 'LEMONMILK-Medium.otf')
     setTextString('botplayTxt', 'showcasing\n(or you suck)')
     setTextFont('botplayTxt', 'LEMONMILK-Medium.otf')
+
+    if keyboardJustPressed('SIX') then
+        endSong()
+    end
 end
 
 function onCreatePost()

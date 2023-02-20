@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="nema.png">
+	<!-- Created with Adobe Animate version 19.2.1.408 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Idle0000" x="0" y="0" width="466" height="734" frameX="0" frameY="-8" frameWidth="502" frameHeight="743"/>
+	<SubTexture name="Idle0001" x="0" y="0" width="466" height="734" frameX="0" frameY="-8" frameWidth="502" frameHeight="743"/>
+	<SubTexture name="Idle0002" x="466" y="0" width="457" height="734" frameX="-2" frameY="-8" frameWidth="502" frameHeight="743"/>
+	<SubTexture name="Idle0003" x="466" y="0" width="457" height="734" frameX="-2" frameY="-8" frameWidth="502" frameHeight="743"/>
+	<SubTexture name="Idle0004" x="923" y="0" width="464" height="736" frameX="-6" frameY="-6" frameWidth="502" frameHeight="743"/>
+	<SubTexture name="Idle0005" x="923" y="0" width="464" height="736" frameX="-6" frameY="-6" frameWidth="502" frameHeight="743"/>
+	<SubTexture name="Idle0006" x="1387" y="0" width="478" height="741" frameX="-13" frameY="-2" frameWidth="502" frameHeight="743"/>
+	<SubTexture name="Idle0007" x="1387" y="0" width="478" height="741" frameX="-13" frameY="-2" frameWidth="502" frameHeight="743"/>
+	<SubTexture name="Idle0008" x="0" y="741" width="484" height="743" frameX="-16" frameY="0" frameWidth="502" frameHeight="743"/>
+	<SubTexture name="Idle0009" x="0" y="741" width="484" height="743" frameX="-16" frameY="0" frameWidth="502" frameHeight="743"/>
+	<SubTexture name="Idle0010" x="484" y="741" width="486" height="743" frameX="-16" frameY="0" frameWidth="502" frameHeight="743"/>
+	<SubTexture name="Idle0011" x="484" y="741" width="486" height="743" frameX="-16" frameY="0" frameWidth="502" frameHeight="743"/>
+	<SubTexture name="Idle0012" x="484" y="741" width="486" height="743" frameX="-16" frameY="0" frameWidth="502" frameHeight="743"/>
+	<SubTexture name="Idle0013" x="484" y="741" width="486" height="743" frameX="-16" frameY="0" frameWidth="502" frameHeight="743"/>
+</TextureAtlas>

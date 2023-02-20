@@ -85,32 +85,38 @@ function onSkipDialogue(count)
 	-- triggered when you press Enter and skip a dialogue line that was still being typed, dialogue line starts with 1
 end
 
-function onEndSong()
-	if misses == 0 then
-		loadSong('dysarthria', 1)
-		return Function_Stop
-	elseif not cool then
-		playMusic('tea-time', 1)
-		makeLuaSprite('end', 'your image', 0, 0);
-		setObjectCamera('end', 'camOther');
-		addLuaSprite('end', true);
-		cool = true
-		return Function_Stop;
-	end
-	return Function_Continue;
-	end
-end
-
-function onEndSong()
-    if isStoryMode then
-        if not cool then
-            playMusic('freakyMenu', 1)
-            makeLuaSprite('end', 'your image', 0, 0);
-            setObjectCamera('end', 'camOther');
-            addLuaSprite('end', true);
-            cool = true
-            return Function_Stop;
+local cool = false
+function onUpdate()
+    if cool then
+        if keyJustPressed('accept') then
+            endSong()
         end
-        return Function_Continue;
     end
+end
+function onEndSong()
+	if isStoryMode and difficulty == 2 then
+		if misses == 0 then
+			loadSong('dysarthria', 1)
+			return Function_Stop
+		elseif not cool and isStoryMode and misses > 0 then
+			playMusic('tea-time', 1)
+			makeLuaSprite('end', 'endings/endingBasic', 0, 0);
+			setObjectCamera('end', 'camOther');
+			setProperty('end.alpha', '0')
+			addLuaSprite('end', true);
+			doTweenAlpha('bad1', 'end', 1, 1, 'linear');
+			cool = true
+			return Function_Stop;
+		elseif not cool and misses > 9 then
+			playMusic('tea-time', 1)
+			makeLuaSprite('end', 'endings/TakeTheL', 0, 0);
+			setObjectCamera('end', 'camOther');
+			setProperty('end.alpha', '0')
+			addLuaSprite('end', true);
+			doTweenAlpha('bad1', 'end', 1, 1, 'linear');
+			cool = true
+			return Function_Stop;
+		end
+		return Function_Continue;
+	end
 end

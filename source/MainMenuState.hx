@@ -7,6 +7,7 @@ import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.FlxCamera;
+import flixel.addons.display.FlxBackdrop;
 import flixel.addons.transition.FlxTransitionableState;
 import flixel.effects.FlxFlicker;
 import flixel.graphics.frames.FlxAtlasFrames;
@@ -45,6 +46,7 @@ class MainMenuState extends MusicBeatState
 	var camFollowPos:FlxObject;
 	var debugKeys:Array<FlxKey>;
 	var bf:BGSprite;
+	var chess:FlxBackdrop;
 
 	override function create()
 	{
@@ -70,6 +72,11 @@ class MainMenuState extends MusicBeatState
 		transIn = FlxTransitionableState.defaultTransIn;
 		transOut = FlxTransitionableState.defaultTransOut;
 
+		FlxG.camera.zoom = 1.2;
+		FlxTween.tween(FlxG.camera, {zoom: 1}, 1, {
+			ease: FlxEase.circOut,
+		});
+
 		persistentUpdate = persistentDraw = true;
 
 		var yScroll:Float = Math.max(0.25 - (0.05 * (optionShit.length - 4)), 0.1);
@@ -81,11 +88,6 @@ class MainMenuState extends MusicBeatState
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
 
-		camFollow = new FlxObject(0, 0, 1, 1);
-		camFollowPos = new FlxObject(0, 0, 1, 1);
-		add(camFollow);
-		add(camFollowPos);
-
 		magenta = new FlxSprite(-80).loadGraphic(Paths.image('menuDesat'));
 		magenta.scrollFactor.set(0, yScroll);
 		magenta.setGraphicSize(Std.int(magenta.width * 1.175));
@@ -95,6 +97,21 @@ class MainMenuState extends MusicBeatState
 		magenta.antialiasing = ClientPrefs.globalAntialiasing;
 		magenta.color = 0xFFfd719b;
 		add(magenta);
+
+		chess = new FlxBackdrop(Paths.image('mmbg'), 0, 0);
+		chess.scrollFactor.set(0, 0.1);
+		chess.y -= 80;
+		chess.color = 0xFF000000;
+		add(chess);
+
+		chess.offset.x -= 0;
+		chess.offset.y += 0;
+		chess.velocity.x = 20;
+
+		camFollow = new FlxObject(0, 0, 1, 1);
+		camFollowPos = new FlxObject(0, 0, 1, 1);
+		add(camFollow);
+		add(camFollowPos);
 		
 		// magenta.scrollFactor.set();
 
@@ -222,6 +239,10 @@ class MainMenuState extends MusicBeatState
 					selectedSomethin = true;
 					FlxG.sound.play(Paths.sound('confirmMenu'));
 
+					FlxTween.tween(FlxG.camera, {zoom: 1.5}, 1.5, {
+						ease: FlxEase.cubeIn,
+					});
+
 					if(ClientPrefs.flashing) FlxFlicker.flicker(magenta, 1.1, 0.15, false);
 
 					menuItems.forEach(function(spr:FlxSprite)
@@ -246,8 +267,14 @@ class MainMenuState extends MusicBeatState
 								{
 									case 'story_mode':
 										MusicBeatState.switchState(new StoryMenuState());
+										FlxTween.tween(FlxG.camera, {y: 720}, 1, {
+											ease: FlxEase.cubeIn,
+										});
 									case 'freeplay':
 										MusicBeatState.switchState(new FreeplayState());
+										FlxTween.tween(FlxG.camera, {x: 1280}, 1, {
+											ease: FlxEase.cubeIn,
+										});
 									#if MODS_ALLOWED
 									case 'mods':
 										MusicBeatState.switchState(new ModsMenuState());

@@ -48,6 +48,7 @@ class FreeplayState extends MusicBeatState
 	private var iconArray:Array<HealthIcon> = [];
 
 	var bg:FlxSprite;
+	var chess:FlxBackdrop;
 	var intendedColor:Int;
 	var colorTween:FlxTween;
 
@@ -102,9 +103,18 @@ class FreeplayState extends MusicBeatState
 			}
 		}*/
 
-		bg = new FlxBackdrop(Paths.image('menuDesat'));
-		bg.velocity.set(500,500);
+		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
+		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
+
+		chess = new FlxBackdrop(Paths.image('mmbg'), 0, 0);
+		chess.scrollFactor.set(0, 0.1);
+		chess.y -= 80;
+		add(chess);
+		
+		chess.offset.x -= 0;
+		chess.offset.y += 0;
+		chess.velocity.y = 20;
 
 		grpSongs = new FlxTypedGroup<Alphabet>();
 		add(grpSongs);
@@ -150,8 +160,10 @@ class FreeplayState extends MusicBeatState
 
 		add(scoreText);
 
-		if(curSelected >= songs.length) curSelected = 0;
-		bg.color = songs[curSelected].color;
+		if(curSelected >= songs.length) curSelected = 0; {
+			bg.color = songs[curSelected].color;
+			chess.color = songs[curSelected].color;
+		}
 		intendedColor = bg.color;
 
 		if(lastDifficultyName == '')
@@ -443,6 +455,11 @@ class FreeplayState extends MusicBeatState
 			}
 			intendedColor = newColor;
 			colorTween = FlxTween.color(bg, 1, bg.color, intendedColor, {
+				onComplete: function(twn:FlxTween) {
+					colorTween = null;
+				}
+			});
+			colorTween = FlxTween.color(chess, 1, chess.color, intendedColor, {
 				onComplete: function(twn:FlxTween) {
 					colorTween = null;
 				}
