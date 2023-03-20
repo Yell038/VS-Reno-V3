@@ -1,99 +1,258 @@
--- Script by Shadow Mario
--- Customized for Simplicity by Kevin Kuntz
-function onCreate()
-	makeAnimationList();
-	makeOffsets();
-	
-	-- boxing guy
-	makeAnimatedLuaSprite('reno', 'characters/reno',  -1000, defaultOpponentY + 200);
-	addAnimationByPrefix('reno', 'idle', 'Idle', 24, false);
-	addAnimationByPrefix('reno', 'singLEFT', 'Left', 24, false);
-	addAnimationByPrefix('reno', 'singDOWN', 'Down', 24, false);
-	addAnimationByPrefix('reno', 'singUP', 'Up', 24, false);
-	addAnimationByPrefix('reno', 'singRIGHT', 'Right', 24, false);
-	
-	addLuaSprite('reno', true);
+-- Script made by XTihX https://gamebanana.com/members/2066788
 
-	playAnimation('reno', 0, true);
+local characters = { -- The variable that stores the amount of characters that you want
+    { 
+        charName = 'reno', -- The name of your character that can be used in functions like "setProperty('pico.scale.x', 400)" or "doTweenX('tag', 'pico', 300, 2.5, 'linear')"
+        characterName = 'reno', -- The name of your .json character in the folder "characters"
+        x = 300, -- The X Pos of your character
+        y = 325, -- The Y Pos of your character
+        group = 'dadGroup', -- The Group of your character, can be 'boyfriendGroup', 'dadGroup' or 'gfGroup' (DONT LEAVE THIS VALUE IN BLANK)
+        noteTypes = { -- The note types of your characters, to add a new one make like the exemple down here.
+            { name = 'customSingLeft',    animSuffix = '' }
+        } 
+    },
+    { 
+        charName = 'playgf', -- The name of your character that can be used in functions like "setProperty('pico.scale.x', 400)" or "doTweenX('tag', 'pico', 300, 2.5, 'linear')"
+        characterName = 'gf_playable', -- The name of your .json character in the folder "characters"
+        x = 300, -- The X Pos of your character
+        y = 300, -- The Y Pos of your character
+        group = 'boyfriendGroup', -- The Group of your character, can be 'boyfriendGroup', 'dadGroup' or 'gfGroup' (DONT LEAVE THIS VALUE IN BLANK)
+        noteTypes = { -- The note types of your characters, to add a new one make like the exemple down here.
+            { name = 'customSingRight',    animSuffix = '' },
+            { name = 'customSingLeft',    animSuffix = '' },
+            { name = 'customSingRightDouble',    animSuffix = '' }
+        } 
+    }
+};
+
+isExtraKeys = false -- change it to true if this script is running on the psych engine extra keys.
+
+
+--DONT CHANGE ANYTHING DOWN HERE UNLESS YOU KNOW WHAT YOU ARE DOING!!--------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------
+function onCreatePost()
+    luaDebugMode = true;
+
+    addHaxeLibrary('Note');
+    addHaxeLibrary('FlxMath', 'flixel.math');
+    addHaxeLibrary('Math');
+    addHaxeLibrary('Std');
+
+    for i, char in ipairs(characters) do
+        runHaxeCode([[
+            game.variables[']]..char.charName..[['] = new Character(]]..char.x..[[, ]]..char.y..[[, ']]..char.characterName..[[');
+            game.]]..char.group..[[.add(game.variables[']]..char.charName..[[']);
+        ]]);
+		setProperty('reno.y', 250)
+		setProperty('reno.x', -1000)
+
+        setProperty('playgf.alpha', 0)
+    end
 end
 
-animationsList = {}
-holdTimers = {reno = -1.0};
-noteDatas = {reno = 0};
-function makeAnimationList()
-	animationsList[0] = 'idle';
-	animationsList[1] = 'singLEFT';
-	animationsList[2] = 'singDOWN';
-	animationsList[3] = 'singUP';
-	animationsList[4] = 'singRIGHT';
+function onStartCountdown()
+    runTimer('startTimer', crochet / 1000 / playbackRate, 5);
 end
 
-offsetsreno = {};
-function makeOffsets()
-	offsetsreno[0] = {x = 0, y = 0}; --idle
-	offsetsreno[1] = {x = 10, y = -6}; --left
-	offsetsreno[2] = {x = -54, y = -69}; --down
-	offsetsreno[3] = {x = -8, y = 65}; --up
-	offsetsreno[4] = {x = -5, y = 0}; --right
-end
-
-function opponentNoteHit(id, direction, noteType, isSustainNote)
-	if noteType == 'Special Sing' then
-		if not isSustainNote then
-			noteDatas.reno = direction;
-		end	
-	characterToPlay = 'reno'
-	animToPlay = noteDatas.reno;
-	holdTimers.reno = 0;
-			
-	playAnimation(characterToPlay, animToPlay, true);
-	end
-end
-
-function onUpdate(elapsed)
-	holdCap = stepCrochet * 0.004;
-	if holdTimers.reno >= 0 then
-		holdTimers.reno = holdTimers.reno + elapsed;
-		if holdTimers.reno >= holdCap then
-			playAnimation('reno', 0, false);
-			holdTimers.reno = -1;
-		end
-	end
-end
-
-function onCountdownTick(counter)
-	beatHitDance(counter);
+function onTimerCompleted(tag, loops, loopsLeft)
+    if tag == 'startTimer' then
+        for i, char in ipairs(characters) do
+            runHaxeCode([[
+                if (game.variables[']]..char.charName..[['].danceIdle && ]]..loopsLeft..[[ % Math.round(game.variables[']]..char.charName..[['].danceEveryNumBeats) == 0 && game.variables[']]..char.charName..[['].animation.curAnim != null && !StringTools.startsWith(game.variables[']]..char.charName..[['].animation.curAnim.name, 'sing') && !game.variables[']]..char.charName..[['].stunned) {
+                    game.variables[']]..char.charName..[['].dance();
+                }
+                if (!game.variables[']]..char.charName..[['].danceIdle && ]]..loopsLeft..[[ % game.variables[']]..char.charName..[['].danceEveryNumBeats == 0 && game.variables[']]..char.charName..[['].animation.curAnim != null && !StringTools.startsWith(game.variables[']]..char.charName..[['].animation.curAnim.name, 'sing') && !game.variables[']]..char.charName..[['].stunned) {
+                    game.variables[']]..char.charName..[['].dance();
+                }
+            ]]);
+        end
+    end
 end
 
 function onBeatHit()
-	beatHitDance(curBeat);
+    for i, char in ipairs(characters) do
+        runHaxeCode([[
+            if (game.variables[']]..char.charName..[['].danceIdle && game.curBeat % Math.round(game.variables[']]..char.charName..[['].danceEveryNumBeats) == 0 && game.variables[']]..char.charName..[['].animation.curAnim != null && !StringTools.startsWith(game.variables[']]..char.charName..[['].animation.curAnim.name, 'sing') && !game.variables[']]..char.charName..[['].stunned) {
+                game.variables[']]..char.charName..[['].dance();
+            }
+            if (!game.variables[']]..char.charName..[['].danceIdle && game.curBeat % game.variables[']]..char.charName..[['].danceEveryNumBeats == 0 && game.variables[']]..char.charName..[['].animation.curAnim != null && !StringTools.startsWith(game.variables[']]..char.charName..[['].animation.curAnim.name, 'sing') && !game.variables[']]..char.charName..[['].stunned) {
+                game.variables[']]..char.charName..[['].dance();
+            }
+        ]]);
+    end
 end
 
-function beatHitDance(counter)
-	if counter % 2 == 0 then
-		if holdTimers.reno < 0 then
-			playAnimation('reno', 0, false);
-		end
-	end
+function opponentNoteHit(id, noteData, noteType, isSustainNote)
+    characterNoteHit(id, noteData, noteType, isSustainNote);
 end
 
-function playAnimation(character, animId, forced)
-	-- 0 = idle
-	-- 1 = singLEFT
-	-- 2 = singDOWN
-	-- 3 = singUP
-	-- 4 = singRIGHT
-	animName = animationsList[animId];
-	--debugPrint(animName);
-	if character == 'reno' then
-		objectPlayAnimation('reno', animName, forced); -- this part is easily broke if you use objectPlayAnim (I have no idea why its like this)
-		setProperty('reno.offset.x', offsetsreno[animId].x);
-		setProperty('reno.offset.y', offsetsreno[animId].y);
-	end
+function characterNoteHit(id, noteData, noteType, isSustainNote)
+    for i, char in ipairs(characters) do
+        for j, note in ipairs(char.noteTypes) do
+            if noteType == note.name then
+                if isExtraKeys then
+                    runHaxeCode([[
+                        var animToPlay:String = 'sing' + Note.keysShit.get(PlayState.mania).get('anims')[]]..noteData..[[];
+    
+                        game.variables[']]..char.charName..[['].playAnim(animToPlay + ']]..note.animSuffix..[[', true);
+                        game.variables[']]..char.charName..[['].holdTimer = 0;
+                    ]]);
+                else
+                    runHaxeCode([[
+                        var animToPlay:String = game.singAnimations[Std.int(Math.abs(]]..noteData..[[))];
+        
+                        game.variables[']]..char.charName..[['].playAnim(animToPlay + ']]..note.animSuffix..[[', true);
+                        game.variables[']]..char.charName..[['].holdTimer = 0;
+                    ]]);
+                end
+            end
+        end
+    end
+end
+function noteMiss(id, noteData, noteType, isSustainNote)
+    for i, char in ipairs(characters) do
+        for j, note in ipairs(char.noteTypes) do
+            if noteType == note.name then
+                if isExtraKeys then
+                    runHaxeCode([[
+                        if(game.variables[']]..char.charName..[['].hasMissAnimations) {
+                            var animToPlay:String = 'sing' + Note.keysShit.get(PlayState.mania).get('anims')[]]..noteData..[[] + 'miss';
+                            game.variables[']]..char.charName..[['].playAnim(animToPlay + ']]..note.animSuffix..[[', true);
+                        }
+                    ]]);
+                else
+                    runHaxeCode([[
+                        if (game.variables[']]..char.charName..[['].hasMissAnimations) {
+                            var animToPlay:String = game.singAnimations[Std.int(Math.abs(]]..noteData..[[))] + 'miss';
+                            game.variables[']]..char.charName..[['].playAnim(animToPlay + ']]..note.animSuffix..[[', true);
+                        }
+                    ]]);
+                end
+            end
+        end
+    end
+end
+function noteMissPress(direction)
+    for i, char in ipairs(characters) do
+        for j, note in ipairs(char.noteTypes) do
+            if noteType == note.name then
+                if isExtraKeys then
+                    runHaxeCode([[
+                        if (game.variables[']]..char.charName..[['].hasMissAnimations) {
+                            game.variables[']]..char.charName..[['].playAnim('sing' + Note.keysShit.get(PlayState.mania).get('anims')[]]..direction..[[] + 'miss' + ']]..note.animSuffix..[[', true);
+                        }
+                    ]]);
+                else
+                    runHaxeCode([[
+                        if (game.variables[']]..char.charName..[['].hasMissAnimations) {
+                            game.variables[']]..char.charName..[['].playAnim(game.singAnimations[Std.int(Math.abs(]]..direction..[[))] + 'miss' + ']]..note.animSuffix..[[', true);
+                        }
+                    ]]);
+                end
+            end
+        end
+    end
+end
+
+local keysPressed = {false, false, false, false, false, false, false, false, false};
+
+function onKeyPress(key)
+    keysPressed[key+1] = true;
+end
+function onKeyRelease(key)
+    keysPressed[key+1] = false;
+end
+
+function onUpdatePost(elapsed)
+    local anyKeyPressed = false;
+    for i, pressed in ipairs(keysPressed) do
+        if pressed == true then
+            anyKeyPressed = true;
+            break;
+        end
+    end
+
+    for i, char in ipairs(characters) do
+        if char.group == 'boyfriendGroup' then
+            if not botPlay then
+                runHaxeCode([[
+                    setVar('pressed', ]]..tostring(anyKeyPressed)..[[);
+
+                    if (StringTools.startsWith(game.variables[']]..char.charName..[['].animation.curAnim.name, 'sing')) {
+                        game.variables[']]..char.charName..[['].holdTimer += ]]..elapsed..[[;
+                    }
+
+                    if (!getVar('pressed') && game.variables[']]..char.charName..[['].holdTimer >= Conductor.stepCrochet * (0.0011 / (FlxG.sound.music != null ? FlxG.sound.music.pitch : 1)) * game.variables[']]..char.charName..[['].singDuration && game.variables[']]..char.charName..[['].animation.curAnim != null && StringTools.startsWith(game.variables[']]..char.charName..[['].animation.curAnim.name, 'sing') && !StringTools.endsWith(game.variables[']]..char.charName..[['].animation.curAnim.name, 'miss')) {
+                        game.variables[']]..char.charName..[['].dance();
+                        
+                    } else if (getVar('pressed')) {
+                        game.variables[']]..char.charName..[['].holdTimer = 0;
+                    }
+                ]]);
+            end
+        end
+    end
 end
 
 function onStepHit()
     if curStep == 896 then
         doTweenX('wow', 'reno', -100, 1, 'circInOut')
+    else if curStep == 976 then
+        setProperty('playgf.alpha', 1)
     end
 end
+end
+
+function scaleChar(char, x, y)
+    x = x or 1
+    y = y or x
+    if not scaleChar_init then
+      addHaxeLibrary('FunkinLua')
+      addHaxeLibrary('Character')
+      runHaxeCode([[
+        function setProperty(variable:String, value:Dynamic):Bool
+        {
+          if(getProperty(variable, true) == null)
+            return;
+          var killMe:Array<String> = variable.split('.');
+          if(killMe.length > 1) {
+            FunkinLua.setVarInArray(FunkinLua.getPropertyLoopThingWhatever(killMe), killMe[killMe.length-1], value);
+            return true;
+          }
+          FunkinLua.setVarInArray(FunkinLua.getInstance(), variable, value);
+          return true;
+        }
+        function getProperty(variable:String):Dynamic
+        {
+          var result:Dynamic = null;
+          var killMe:Array<String> = variable.split('.');
+          if(killMe.length > 1)
+            result = FunkinLua.getVarInArray(FunkinLua.getPropertyLoopThingWhatever(killMe), killMe[killMe.length-1]);
+          else
+            result = FunkinLua.getVarInArray(FunkinLua.getInstance(), variable);
+          return result;
+        }
+      ]])
+      scaleChar_init = true
+    end
+    runHaxeCode([[
+      var char:String = "]]..char:gsub('"', '\\"')..[[";
+      var scale:Array<Float> = ]]..('[' .. table.concat({x, y}, ',') .. ']')..[[;
+      
+      var dummyChar = new Character(0, 0, getProperty(char + '.curCharacter'));
+      var offsets:Map<String, Array<Dynamic>> = dummyChar.animOffsets;
+      dummyChar.kill();
+      dummyChar.destroy();
+      
+      for(offset in offsets)
+      {
+        offset[0] *= scale[0];
+        offset[1] *= scale[1];
+      }
+      
+      setProperty(char + '.animOffsets', offsets);
+      setProperty(char + '.scale.x', scale[0]);
+      setProperty(char + '.scale.y', scale[1]);
+    ]])
+  end

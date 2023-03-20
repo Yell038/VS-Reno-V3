@@ -14,19 +14,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				10,
-				-6
-			],
-			"anim": "singLEFT",
-			"fps": 24,
-			"name": "Left",
-			"indices": []
-		},
-		{
-			"loop": false,
-			"offsets": [
-				-8,
-				65
+				142,
+				85
 			],
 			"anim": "singUP",
 			"fps": 24,
@@ -34,33 +23,44 @@
 			"indices": []
 		},
 		{
-			"offsets": [
-				-54,
-				-69
-			],
 			"loop": false,
-			"fps": 24,
+			"offsets": [
+				-8,
+				-154
+			],
 			"anim": "singDOWN",
-			"indices": [],
-			"name": "Down"
+			"fps": 24,
+			"name": "Down",
+			"indices": []
 		},
 		{
 			"offsets": [
-				-5,
-				0
+				40,
+				5
 			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
 			"loop": false,
+			"name": "Left"
+		},
+		{
+			"offsets": [
+				97,
+				-1
+			],
+			"indices": [],
 			"fps": 24,
 			"anim": "singRIGHT",
-			"indices": [],
+			"loop": false,
 			"name": "Right"
 		}
 	],
-	"no_antialiasing": false,
+	"no_antialiasing": true,
 	"image": "characters/reno",
 	"position": [
 		110,
-		110
+		40
 	],
 	"healthicon": "reno",
 	"flip_x": false,
@@ -71,7 +71,7 @@
 	],
 	"camera_position": [
 		0,
-		110
+		0
 	],
 	"sing_duration": 6.1,
 	"scale": 1

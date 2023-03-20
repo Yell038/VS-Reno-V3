@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="pai.png">
+	<!-- Created with Adobe Animate version 19.2.1.408 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="pai_Idle0000" x="0" y="0" width="168" height="298" frameX="0" frameY="-13" frameWidth="168" frameHeight="312"/>
+	<SubTexture name="pai_Idle0001" x="0" y="0" width="168" height="298" frameX="0" frameY="-13" frameWidth="168" frameHeight="312"/>
+	<SubTexture name="pai_Idle0002" x="168" y="0" width="167" height="299" frameX="-1" frameY="-12" frameWidth="168" frameHeight="312"/>
+	<SubTexture name="pai_Idle0003" x="168" y="0" width="167" height="299" frameX="-1" frameY="-12" frameWidth="168" frameHeight="312"/>
+	<SubTexture name="pai_Idle0004" x="335" y="0" width="164" height="304" frameX="-2" frameY="-7" frameWidth="168" frameHeight="312"/>
+	<SubTexture name="pai_Idle0005" x="335" y="0" width="164" height="304" frameX="-2" frameY="-7" frameWidth="168" frameHeight="312"/>
+	<SubTexture name="pai_Idle0006" x="0" y="304" width="162" height="311" frameX="-3" frameY="-1" frameWidth="168" frameHeight="312"/>
+	<SubTexture name="pai_Idle0007" x="0" y="304" width="162" height="311" frameX="-3" frameY="-1" frameWidth="168" frameHeight="312"/>
+	<SubTexture name="pai_Idle0008" x="162" y="304" width="162" height="312" frameX="-3" frameY="0" frameWidth="168" frameHeight="312"/>
+	<SubTexture name="pai_Idle0009" x="162" y="304" width="162" height="312" frameX="-3" frameY="0" frameWidth="168" frameHeight="312"/>
+</TextureAtlas>

@@ -28,6 +28,10 @@ end
 
 function onUpdate()
 	if keyboardPressed('NINE') then
+		runHaxeCode([[
+			FlxTransitionableState.skipNextTransIn = true;
+			FlxTransitionableState.skipNextTransOut = true;
+		]])
         loadSong('dysarthria', 1)
     end
 end

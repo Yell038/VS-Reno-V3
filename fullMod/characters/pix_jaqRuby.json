@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-4,
+				0
+			],
+			"anim": "singRIGHT",
+			"fps": 12,
+			"name": "Right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-4,
+				0
+			],
+			"anim": "idle",
+			"fps": 12,
+			"name": "Idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-4,
+				0
+			],
+			"anim": "singLEFT",
+			"fps": 12,
+			"name": "Left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-4,
+				0
+			],
+			"anim": "singDOWN",
+			"fps": 12,
+			"name": "Down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-4,
+				0
+			],
+			"anim": "singUP",
+			"fps": 12,
+			"name": "Up",
+			"indices": []
+		}
+	],
+	"no_antialiasing": true,
+	"image": "characters/RPG/jaqRubyHaha",
+	"position": [
+		50,
+		400
+	],
+	"healthicon": "pix_jaq",
+	"flip_x": false,
+	"healthbar_colors": [
+		134,
+		37,
+		202
+	],
+	"camera_position": [
+		-160,
+		-290
+	],
+	"sing_duration": 6.1,
+	"scale": 6.00000000000001
+}

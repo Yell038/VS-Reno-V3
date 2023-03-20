@@ -14,9 +14,10 @@ function onCreate()
 		setObjectCamera('glow', 'other')
 		addLuaSprite('glow', true);
 
-		makeAnimatedLuaSprite('leftBopper', 'street/boppers', -50, 500);
-		addAnimationByPrefix('leftBopper', 'idle', 'leftBop', 24, false);
+		makeAnimatedLuaSprite('leftBopper', 'street/bgPeople/pai', 500, 400);
+		addAnimationByPrefix('leftBopper', 'idle', 'pai_Idle', 24, false);
 		scaleObject('leftBopper', 1.7, 1.7);
+		updateHitbox('leftBopper')
 	
 		makeAnimatedLuaSprite('rightBopper', 'street/boppers', 1750, 500);
 		addAnimationByPrefix('rightBopper', 'idle', 'rightBop', 24, false);

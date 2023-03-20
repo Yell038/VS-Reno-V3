@@ -54,6 +54,18 @@ function goodNoteHit(id, noteData, noteType, isSustainNote)
 		-- characterPlayAnim('Dad','shootRIGHT',true)
 		triggerEvent('Play Animation','shootRIGHT','Dad')
 	end
+
+	if noteType == "Bullet Note" and not stringStartsWith(boyfriendName, 'nema') then
+		if getPropertyFromGroup('notes', id, 'rating') == 'good' then
+			setProperty('health', getProperty('health') -0.1);
+		else if getPropertyFromGroup('notes', id, 'rating') == 'bad' then
+			setProperty('health', getProperty('health') -0.25);
+		else if getPropertyFromGroup('notes', id, 'rating') == 'shit' then
+			setProperty('health', getProperty('health') -0.5);
+		end
+		end
+		end
+	end
 end
 
 function opponentNoteHit(membersIndex, noteData, noteType, isSustainNote)

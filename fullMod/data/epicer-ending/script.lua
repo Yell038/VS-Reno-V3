@@ -1,6 +1,7 @@
 function onCreate()
     precacheImage('characters/reno')
     addLuaScript('data/epic-ending-remix/reno')
+	removeLuaScript('characters/bf')
 end
 
 function onUpdate()
@@ -13,9 +14,6 @@ function onStepHit()
     if curStep > 144 then
         doTweenAlpha('hudFunne', 'camHUD', 1, 0.2, 'linear')
     end
-	if curStep > 976 then
-		removeLuaScript('characters/bf', true)
-	end
 end
 
 function onSongStart()

@@ -1,0 +1,15 @@
+{
+	"directory": "rpgSunsetStage",
+	"defaultZoom": 0.6,
+	"isPixelStage": true,
+
+	"boyfriend": [970, 320],
+	"girlfriend": [580, 430],
+	"opponent": [-150, -150],
+	"hide_girlfriend": false,
+
+	"camera_boyfriend": [-100, -100],
+	"camera_opponent": [0, 0],
+	"camera_girlfriend": [-100, -400],
+	"camera_speed": 1
+}

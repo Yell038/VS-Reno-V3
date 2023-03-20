@@ -1,59 +1,129 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "idle",
-			"indices": [],
-			"name": "idle"
+			"fps": 24,
+			"name": "Idle",
+			"indices": []
 		},
 		{
-			"offsets": [
-				70,
-				0
-			],
 			"loop": false,
-			"fps": 24,
+			"offsets": [
+				3,
+				-13
+			],
 			"anim": "singLEFT",
-			"indices": [],
-			"name": "left"
+			"fps": 24,
+			"name": "Left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-3,
+				-12
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "Right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				10,
+				-46
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "Down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-3,
+				38
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "Up",
+			"indices": []
 		},
 		{
 			"offsets": [
 				0,
-				-4
+				0
 			],
-			"loop": false,
+			"indices": [
+				9,
+				10
+			],
 			"fps": 24,
-			"anim": "singRIGHT",
-			"indices": [],
-			"name": "right"
+			"anim": "idle-loop",
+			"loop": true,
+			"name": "Idle"
 		},
 		{
 			"offsets": [
-				20,
-				-10
+				-3,
+				38
 			],
-			"loop": false,
+			"indices": [
+				9,
+				10
+			],
 			"fps": 24,
-			"anim": "singDOWN",
-			"indices": [],
-			"name": "down"
+			"anim": "singUP-loop",
+			"loop": true,
+			"name": "Up"
 		},
 		{
 			"offsets": [
-				20,
-				40
+				-3,
+				-12
 			],
-			"loop": false,
+			"indices": [
+				9,
+				10
+			],
 			"fps": 24,
-			"anim": "singUP",
-			"indices": [],
-			"name": "up"
+			"anim": "singRIGHT-loop",
+			"loop": true,
+			"name": "Right"
+		},
+		{
+			"offsets": [
+				3,
+				-13
+			],
+			"indices": [
+				9,
+				10
+			],
+			"fps": 24,
+			"anim": "singLEFT-loop",
+			"loop": true,
+			"name": "Left"
+		},
+		{
+			"offsets": [
+				10,
+				-46
+			],
+			"indices": [
+				9,
+				10
+			],
+			"fps": 24,
+			"anim": "singDOWN-loop",
+			"loop": true,
+			"name": "Down"
 		}
 	],
 	"no_antialiasing": false,
@@ -65,9 +135,9 @@
 	"healthicon": "dysreno",
 	"flip_x": false,
 	"healthbar_colors": [
-		25,
-		93,
-		45
+		66,
+		140,
+		35
 	],
 	"camera_position": [
 		0,

@@ -31,7 +31,7 @@ end
 
 
 function goodNoteHit(id, direction, noteType, isSustainNote)
-	if bfturn then
+	if bfturn and gfSection or mustHitSection then
 		if direction == 0 then
 			camlockx = campointx - camMovement
 			camlocky = campointy
