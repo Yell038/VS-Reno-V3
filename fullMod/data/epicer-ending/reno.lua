@@ -5,21 +5,21 @@ local characters = { -- The variable that stores the amount of characters that y
         charName = 'reno', -- The name of your character that can be used in functions like "setProperty('pico.scale.x', 400)" or "doTweenX('tag', 'pico', 300, 2.5, 'linear')"
         characterName = 'reno', -- The name of your .json character in the folder "characters"
         x = 300, -- The X Pos of your character
-        y = 325, -- The Y Pos of your character
+        y = 0, -- The Y Pos of your character
         group = 'dadGroup', -- The Group of your character, can be 'boyfriendGroup', 'dadGroup' or 'gfGroup' (DONT LEAVE THIS VALUE IN BLANK)
         noteTypes = { -- The note types of your characters, to add a new one make like the exemple down here.
-            { name = 'customSingLeft',    animSuffix = '' }
+            { name = 'customSingLeft',    animSuffix = '' },
+            { name = 'customSingLeftDouble',    animSuffix = '' }
         } 
     },
     { 
         charName = 'playgf', -- The name of your character that can be used in functions like "setProperty('pico.scale.x', 400)" or "doTweenX('tag', 'pico', 300, 2.5, 'linear')"
         characterName = 'gf_playable', -- The name of your .json character in the folder "characters"
-        x = 300, -- The X Pos of your character
-        y = 300, -- The Y Pos of your character
+        x = 0, -- The X Pos of your character
+        y = 100, -- The Y Pos of your character
         group = 'boyfriendGroup', -- The Group of your character, can be 'boyfriendGroup', 'dadGroup' or 'gfGroup' (DONT LEAVE THIS VALUE IN BLANK)
         noteTypes = { -- The note types of your characters, to add a new one make like the exemple down here.
             { name = 'customSingRight',    animSuffix = '' },
-            { name = 'customSingLeft',    animSuffix = '' },
             { name = 'customSingRightDouble',    animSuffix = '' }
         } 
     }
@@ -44,7 +44,6 @@ function onCreatePost()
             game.variables[']]..char.charName..[['] = new Character(]]..char.x..[[, ]]..char.y..[[, ']]..char.characterName..[[');
             game.]]..char.group..[[.add(game.variables[']]..char.charName..[[']);
         ]]);
-		setProperty('reno.y', 250)
 		setProperty('reno.x', -1000)
 
         setProperty('playgf.alpha', 0)
@@ -84,6 +83,10 @@ function onBeatHit()
 end
 
 function opponentNoteHit(id, noteData, noteType, isSustainNote)
+    characterNoteHit(id, noteData, noteType, isSustainNote);
+end
+
+function goodNoteHit(id, noteData, noteType, isSustainNote)
     characterNoteHit(id, noteData, noteType, isSustainNote);
 end
 
@@ -195,13 +198,18 @@ function onUpdatePost(elapsed)
     end
 end
 
+-- yeah
 function onStepHit()
     if curStep == 896 then
-        doTweenX('wow', 'reno', -100, 1, 'circInOut')
-    else if curStep == 976 then
-        setProperty('playgf.alpha', 1)
+        doTweenX('wow', 'reno', -300, 1, 'circInOut')
     end
-end
+    if curStep == 976 then
+        setProperty('playgf.alpha', 1)
+        doTweenX('uhhuh', 'dad', 300, 1, 'circOut')
+        doTweenX('haiya', 'reno', -50, 1, 'circOut')
+        doTweenX('gfmovex', 'playgf', 1100, 2, 'circOut')
+        doTweenY('gfmovey', 'playgf', 400, 2, 'circOut')
+    end
 end
 
 function scaleChar(char, x, y)

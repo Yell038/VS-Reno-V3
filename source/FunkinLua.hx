@@ -2865,7 +2865,7 @@ class FunkinLua {
 	{
 		if(!ClientPrefs.shaders) return false;
 
-		#if (!flash && sys)
+		#if (MODS_ALLOWED && !flash && sys)
 		if(PlayState.instance.runtimeShaders.exists(name))
 		{
 			luaTrace('Shader $name was already initialized!');

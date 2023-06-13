@@ -4,11 +4,11 @@ songEnded = false
 
 function onCreate()
 	--preload the event
-	addLuaScript('custom_events/Cam Zoom Bounce')
+	addLuaScript('custom_events/required')
 end
 
 function onEvent(n,v1,v2)
-	if n == "Cam Bounce Speed" then
+	if name == "Cam Bounce Speed" then
 		boomspeed = tonumber(v1)
 		bam = tonumber(v2)
 	end
@@ -16,7 +16,7 @@ end
 
 function onBeatHit()
 	if curBeat % boomspeed == 0 and cameraZoomOnBeat and not songEnded then
-		triggerEvent("Cam Zoom Bounce",  getProperty("defaultCamZoom") + bam, (crochet / 1000) * boomspeed);
+		triggerEvent("required",  getProperty("defaultCamZoom") + bam, (crochet / 1000) * boomspeed);
 	end
 end
 

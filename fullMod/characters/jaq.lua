@@ -63,3 +63,7 @@ function onTimerCompleted(tag, loops, loopsLeft)
 		doTweenX('MoveOutFour', 'JukeBoxSubText', -450, 1.5, 'CircInOut')
 	end
 end
+
+function onUpdate(elapsed)
+	setTextColor('scoreTxt', 'd45eff')
+end

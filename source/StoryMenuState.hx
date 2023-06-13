@@ -288,8 +288,9 @@ class StoryMenuState extends MusicBeatState
 		{
 			if (stopspamming == false)
 			{
-				FlxG.sound.play(Paths.sound('confirmMenu'));
-
+				FlxG.sound.music.volume = 0;
+				FlxG.sound.play(Paths.sound('play'));
+				
 				grpWeekText.members[curWeek].startFlashing();
 
 				FlxTween.tween(rightArrow, {alpha: 0}, 0.2, {

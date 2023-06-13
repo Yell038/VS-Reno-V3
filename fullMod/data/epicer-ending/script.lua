@@ -1,7 +1,6 @@
 function onCreate()
     precacheImage('characters/reno')
     addLuaScript('data/epic-ending-remix/reno')
-	removeLuaScript('characters/bf')
 end
 
 function onUpdate()
@@ -18,6 +17,7 @@ end
 
 function onSongStart()
     doTweenAlpha('hudFunne', 'camHUD', 0, 0.4, 'linear')
+	removeLuaScript('characters/bf')
 end
 
 local allowCountdown = false

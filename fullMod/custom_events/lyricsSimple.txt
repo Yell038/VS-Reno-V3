@@ -1,5 +1,0 @@
-value 1: text
-
-value 2: hexdezimal-color
-
-will put out white text if value 2 is empty

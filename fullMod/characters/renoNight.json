@@ -12,32 +12,21 @@
 			"name": "Idle"
 		},
 		{
-			"offsets": [
-				44,
-				-7
-			],
 			"loop": false,
+			"offsets": [
+				142,
+				85
+			],
+			"anim": "singUP",
 			"fps": 24,
-			"anim": "singLEFT",
-			"indices": [],
-			"name": "Left"
+			"name": "Up",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-8,
-				40
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "singUP",
-			"indices": [],
-			"name": "Up"
-		},
-		{
-			"loop": false,
-			"offsets": [
-				0,
-				-80
+				-154
 			],
 			"anim": "singDOWN",
 			"fps": 24,
@@ -45,19 +34,30 @@
 			"indices": []
 		},
 		{
-			"loop": false,
 			"offsets": [
-				-52,
-				-20
+				40,
+				5
 			],
-			"anim": "singRIGHT",
+			"indices": [],
 			"fps": 24,
-			"name": "Right",
-			"indices": []
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "Left"
+		},
+		{
+			"offsets": [
+				97,
+				-1
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "Right"
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/renoNight",
+	"image": "characters/yourmom",
 	"position": [
 		110,
 		150

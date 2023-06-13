@@ -82,7 +82,11 @@ function onUpdate()
   else
     scaleChar('dad', 4, 4)
   end
-	scaleChar('gf', -6, 6)
+  if stringEndsWith(gfName, 'bf-pixel') or stringStartsWith(gfName, 'pix_') then
+	  scaleChar('gf', -6, 6)
+  else
+    scaleChar('gf', -1, 1)
+  end
 	if not mustHitSection and not gfSection then
 		setProperty('defaultCamZoom', 1)
   else

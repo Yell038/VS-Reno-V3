@@ -4,9 +4,13 @@ Superboy in-GAME::superboy::Coder, Charter, Animator, and Composer::https://yout
 Telmex_Cedric::telmex::Artist::https://tmx.carrd.co::0xFFFF0055
 Gallant1330::gallant::Artist::https://www.youtube.com/@Gallant1330::0xFF8800FF
 progremer::progremer::Composer::https://youtube.com/@progremer::0xFF6B4400
-Zayzoon::zayzoon::Artist for Nema::https://youtube.com/@zayzoon15::0xFF9A46C7
+Zayzoon::zayzoon::Ex-Artist::https://youtube.com/@zayzoon15::0xFF9A46C7
 itsnotpikachu::notpika::Main Menu Coder::https://www.youtube.com/channel/UCqKMVxUTzI715duv1OGfqgg::0xFFFFDD00
-Ref::ref::BG artist::https://twitter.com/JkReference::0xFFFF8400
+JCC::yello::BF VA::https://www.youtube.com/@orangToast::0xFFFFDD33
+Latitude_Gamer::LGTV::Female VA::https://www.youtube.com/@orangToast::0xFFFFDD33
+Koufou::kf::Story/Dialogue Writer::https://www.youtube.com/@orangToast::0xFFFFDD33
+New_IvansqlloXd::NIXD::Animator, Artist::https://twitter.com/JkReference::0xFFFF8400
+Ref::ref::Former BG artist::https://twitter.com/JkReference::0xFFFF8400
 
 Mod Credits
 bbpanzu::bb::Owns the assets from the VS. Tord mod::https://youtube.com/c/bbpanzuRulesSoSubscribeplz123::0xFF2B7500

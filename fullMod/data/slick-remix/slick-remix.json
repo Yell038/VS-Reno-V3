@@ -4702,7 +4702,7 @@
 				[
 					[
 						"defaultCamZoom",
-						"0.78",
+						"0.6",
 						""
 					]
 				]
@@ -4728,7 +4728,7 @@
 		"song": "slick-remix",
 		"needsVoices": true,
 		"arrowSkin": "",
-		"stage": "dSideBack",
+		"stage": "roadRain",
 		"validScore": true,
 		"bpm": 130,
 		"speed": 2.4

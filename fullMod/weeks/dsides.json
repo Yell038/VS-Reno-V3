@@ -3,17 +3,21 @@
 	"difficulties": "Normal",
 	"hideFreeplay": false,
 	"weekBackground": "street",
-	"weekBefore": "weekR",
 	"freeplayColor": [
 		146,
 		113,
 		253
 	],
+	"weekBefore": "weekR",
 	"startUnlocked": false,
-	"hideStoryMode": false,
+	"weekCharacters": [
+		"reno",
+		"bf",
+		"gf"
+	],
 	"songs": [
 		[
-			"coolio remix",
+			"pourin",
 			"dsreno",
 			[
 				195,
@@ -22,7 +26,7 @@
 			]
 		],
 		[
-			"slick remix",
+			"coolio remix",
 			"dsreno",
 			[
 				195,
@@ -40,11 +44,7 @@
 			]
 		]
 	],
-	"weekCharacters": [
-		"reno",
-		"bf",
-		"gf"
-	],
-	"hiddenUntilUnlocked": true,
-	"weekName": "Custom Week"
+	"hideStoryMode": false,
+	"weekName": "Custom Week",
+	"hiddenUntilUnlocked": false
 }
