@@ -25,7 +25,23 @@ function onMoveCamera(focus)
 	bfturn = false
 	camlock = false
 	setProperty('cameraSpeed', 1)
+	end
+
 	
+	if focus == 'gf' then
+		if mustHitSection then
+			campointx = getProperty('camFollow.x')
+			campointy = getProperty('camFollow.y')
+			bfturn = true
+			camlock = false
+			setProperty('cameraSpeed', 1)
+		else
+			campointx = getProperty('camFollow.x')
+			campointy = getProperty('camFollow.y')
+			bfturn = false
+			camlock = false
+			setProperty('cameraSpeed', 1)
+		end
 	end
 end
 
@@ -96,5 +112,14 @@ function onUpdate()
 	setProperty('camFollow.x', camlockx)
 	setProperty('camFollow.y', camlocky)
 	end
+
+	getVar("")
+
+	runHaxeCode([[
+		var charAnimOffsetX:Float = 0;
+		var charAnimOffsetY:Float = 0;
+
+		camFollowPos.setPosition(FlxMath.lerp(camFollowPos.x, camFollow.x + charAnimOffsetX, lerpVal), FlxMath.lerp(camFollowPos.y, camFollow.y + charAnimOffsetY, lerpVal));
+	]])
 end
 	-- cringe camera EWW --

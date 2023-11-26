@@ -1,12 +1,22 @@
 --easy script configs
 IntroTextSize = 25	--Size of the text for the Now Playing thing.
 IntroSubTextSize = 30 --size of the text for the Song Name.
-IntroTagColor = '009e00'	--Color of the tag at the end of the box.
+IntroTagColor = 'ffffff'	--Color of the tag at the end of the box.
 IntroTagWidth = 15	--Width of the box's tag thingy.
 --easy script configs
 
 --actual script
-function onCreate()
+function onCreatePost()
+	if stringStartsWith(dadName, 'reno') then
+		IntroTagColor = '2d8800'
+    else if stringStartsWith(dadName, 'jaq') then
+		IntroTagColor = 'd45eff'
+    else if stringStartsWith(dadName, 'nema') then
+		IntroTagColor = 'ffce99'
+        end
+    end
+    end
+
 	--the tag at the end of the box
 	makeLuaSprite('JukeBoxTag', 'empty', -305-IntroTagWidth, 15)
 	makeGraphic('JukeBoxTag', 300+IntroTagWidth, 100, IntroTagColor)
@@ -33,7 +43,7 @@ function onCreate()
 	setTextAlignment('JukeBoxSubText', 'left')
 	setObjectCamera('JukeBoxSubText', 'other')
 	setTextSize('JukeBoxSubText', IntroSubTextSize)
-	setTextColor('JukeBoxSubText', '5dd45d')
+	setTextColor("JukeBoxSubText", IntroTagColor)
 	addLuaText('JukeBoxSubText')
 end
 
@@ -58,4 +68,12 @@ function onTimerCompleted(tag, loops, loopsLeft)
 		doTweenX('MoveOutThree', 'JukeBoxText', -450, 1.5, 'CircInOut')
 		doTweenX('MoveOutFour', 'JukeBoxSubText', -450, 1.5, 'CircInOut')
 	end
+end
+
+function getIconColor(chr)
+    return getColorFromHex(rgbToHex(getProperty(chr .. ".healthColorArray")))
+end
+
+function rgbToHex(array)
+    return string.format('%.2x%.2x%.2x', array[1], array[2], array[3])
 end

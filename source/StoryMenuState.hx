@@ -420,6 +420,14 @@ class StoryMenuState extends MusicBeatState
 		} else {
 			bgSprite.loadGraphic(Paths.image('menubackgrounds/menu_' + assetName));
 		}
+
+		var leBgSong:String = leWeek.bgSong;
+
+		if(leBgSong != null) {
+			FlxG.sound.playMusic(Paths.music(leBgSong), 1);
+		}
+
+		
 		PlayState.storyWeek = curWeek;
 
 		CoolUtil.difficulties = CoolUtil.defaultDifficulties.copy();
@@ -462,6 +470,7 @@ class StoryMenuState extends MusicBeatState
 		{
 			curDifficulty = newPos;
 		}
+
 		updateText();
 	}
 

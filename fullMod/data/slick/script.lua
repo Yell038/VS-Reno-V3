@@ -9,9 +9,13 @@ function onCreate()
 end
 
 function onStepHit()
-	if curStep == 912 then
+	if curStep == 1296 then
 		removeLuaScript('stages/renoback')
 		removeLuaSprite('frontBopper')
+		triggerEvent("flash", "ffffff", "1")
+		triggerEvent("Change Character", "dad", "renoNight")
+		triggerEvent("Change Character", "gf", "gf-night")
+		triggerEvent("Change Character", "bf", "bf-renoskin-night")
 		addLuaScript('stages/streetnight')
 	end
 end

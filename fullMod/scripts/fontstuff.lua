@@ -1,18 +1,13 @@
-function onUpdate(elapsed)
-    setTextFont('scoreTxt', 'LEMONMILK-Medium.otf')
-    setTextFont('timeTxt', 'LEMONMILK-Medium.otf')
-    setTextString('botplayTxt', 'showcasing\n(or you suck)')
-    setTextFont('botplayTxt', 'LEMONMILK-Medium.otf')
+local offset = 3000
 
+
+function onUpdate()
     if stringStartsWith(dadName, 'reno') then
         setTextColor('scoreTxt', '2d8800')
-        setTextColor('score', '2d8800')
     else if stringStartsWith(dadName, 'jaq') then
         setTextColor('scoreTxt', 'd45eff')
-        setTextColor('score', 'd45eff')
     else if stringStartsWith(dadName, 'nema') then
         setTextColor('scoreTxt', 'ffce99')
-        setTextColor('score', 'ffce99')
         end
     end
     end
@@ -22,35 +17,66 @@ function onUpdate(elapsed)
     end
 
     if isStoryMode then
-        setProperty('scoreTxt.visible', false)
+        setTextString('scoreTxt', 'Score: '..score)
     end
+
+    for index = 0,getProperty('unspawnNotes')-1 do
+        setPropertyFromGroup('unspawnNotes', index, 'strumTime', getPropertyFromGroup('unspawnNotes', index, 'strumTime') + offset)
+    end
+end
+
+function onCreate()
+    get = getProperty
+    getFromClass = getPropertyFromClass
+    getFromGroup = getPropertyFromGroup
+    set = setProperty
+    setFromClass = setPropertyFromClass
+    setFromGroup = setPropertyFromGroup
 end
 
 function onCreatePost()
-    if isStoryMode then
-        makeLuaText('score', 'Score: 0', 200, 550, getProperty('healthBarBG.y') +  30)
-        setTextFont('score', 'LEMONMILK-Medium.otf')
-        addLuaText('score')
-    end
+    setTextFont('scoreTxt', 'LEMONMILK-Medium.otf')
+    setTextString('botplayTxt', 'showcasing\n(or you suck)')
+    setTextFont('botplayTxt', 'LEMONMILK-Medium.otf')
+
+    set("scoreTxt.antialiasing", getFromClass("ClientPrefs", "globalAntialiasing"))
+
     setProperty('scoreTxt.y', getProperty('scoreTxt.y') - 7)
-    setProperty('camHUD.alpha', 0)
     if downscroll then
-        setProperty('timeTxt.y', getProperty('timeTxt.y') - 35)
         setProperty('botplayTxt.y', getProperty('botplayTxt.y') - 360)
     else
-        setProperty('timeTxt.y', getProperty('timeTxt.y') - -35)
         setProperty('botplayTxt.y', getProperty('botplayTxt.y') - -360)
     end
+
+    local hideList = {"timeBarBG", "timeBar", "timeTxt"}
+    for i = 1, #hideList do
+        set(hideList[i]..".visible", false)
+    end
+
+    makeLuaText("centerMark", "- "..songName.." -", 0, 0, (downscroll and screenHeight - 40 or 10))
+    setTextSize("centerMark", 24)
+    setTextBorder("centerMark", 2, "000000")
+    screenCenter("centerMark", "X")
+    setObjectCamera("centerMark", "hud")
+    setProperty("centerMark.antialiasing", getPropertyFromClass("ClientPrefs", "globalAntialiasing"))
+    addLuaText("centerMark")
+    setProperty("centerMark.alpha", 0)
+
+    if songName == 'coolio' then
+        setTextString("centerMark", "- coolio. -")
+    end
+
+    --local badabingbadaboom = getPropertyFromClass("Note", "strumTime")
+    --badabingbadaboom = badabingbadaboom + 500
 end
 
-function onCountdownStarted()
-    doTweenAlpha('some random', 'camHUD', 1, 1, 'linear')
-end
-
-function goodNoteHit(membersIndex, noteData, noteType, isSustainNote)
-    setTextString('score', 'Score: '.. getProperty('songScore'))
-end
-
-function noteMiss(...)
-	setTextString('score', 'Score: '.. getProperty('songScore'))
+---
+--- @param tag string
+--- @param loops integer
+--- @param loopsLeft integer
+---
+function onTimerCompleted(tag, loops, loopsLeft)
+    if tag == 'JukeBoxWait' then
+        doTweenAlpha("yeet", "centerMark", 1, 1, "linear")
+    end
 end

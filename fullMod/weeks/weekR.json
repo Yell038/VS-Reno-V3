@@ -1,50 +1,50 @@
 {
+	"storyName": "Street Crowd",
+	"difficulties": "Normal",
+	"hideFreeplay": false,
+	"weekBackground": "street",
+	"weekBefore": "tutorial",
+	"freeplayColor": [
+		62,
+		205,
+		62
+	],
+	"startUnlocked": true,
+	"hideStoryMode": false,
 	"songs": [
 		[
 			"coolio",
 			"reno",
 			[
-				60,
-				180,
-				20
+				62,
+				205,
+				62
 			]
 		],
 		[
 			"slick",
 			"reno",
 			[
-				60,
-				180,
-				20
+				62,
+				205,
+				62
 			]
 		],
 		[
-			"epic ending",
+			"mindset",
 			"reno",
 			[
-				60,
-				180,
-				20
+				62,
+				205,
+				62
 			]
 		]
 	],
-	"hiddenUntilUnlocked": false,
-	"hideFreeplay": false,
-	"weekBackground": "street",
-	"difficulties": "",
 	"weekCharacters": [
 		"reno",
 		"bf",
 		"gf"
 	],
-	"storyName": "Street Crowd",
-	"weekName": "Reno Week",
-	"freeplayColor": [
-		146,
-		113,
-		253
-	],
-	"hideStoryMode": false,
-	"weekBefore": "tutorial",
-	"startUnlocked": true
+	"hiddenUntilUnlocked": false,
+	"weekName": "Reno Week"
 }

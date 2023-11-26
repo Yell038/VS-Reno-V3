@@ -1,66 +1,77 @@
 {
 	"animations": [
 		{
+			"offsets": [
+				2,
+				-3
+			],
 			"loop": false,
-			"offsets": [
-				0,
-				0
-			],
-			"anim": "idle",
-			"fps": 24,
-			"name": "Idle",
-			"indices": []
-		},
-		{
-			"loop": false,
-			"offsets": [
-				142,
-				85
-			],
-			"anim": "singUP",
-			"fps": 24,
-			"name": "Up",
-			"indices": []
-		},
-		{
-			"loop": false,
-			"offsets": [
-				-8,
-				-154
-			],
-			"anim": "singDOWN",
-			"fps": 24,
-			"name": "Down",
-			"indices": []
-		},
-		{
-			"offsets": [
-				40,
-				5
-			],
-			"indices": [],
 			"fps": 24,
 			"anim": "singLEFT",
-			"loop": false,
+			"indices": [],
 			"name": "Left"
 		},
 		{
 			"offsets": [
-				97,
-				-1
+				-108,
+				2
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "singRIGHT",
-			"loop": false,
+			"indices": [],
 			"name": "Right"
+		},
+		{
+			"offsets": [
+				-14,
+				43
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Up"
+		},
+		{
+			"offsets": [
+				9,
+				-27
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Down"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "danceRight",
+			"indices": [],
+			"name": "Idle"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "danceLeft",
+			"indices": [],
+			"name": "Idle"
 		}
 	],
-	"no_antialiasing": true,
+	"no_antialiasing": false,
 	"image": "characters/renoLCD",
 	"position": [
-		110,
-		40
+		-40,
+		-170
 	],
 	"healthicon": "reno",
 	"flip_x": false,
@@ -70,9 +81,9 @@
 		0
 	],
 	"camera_position": [
-		0,
-		0
+		90,
+		160
 	],
 	"sing_duration": 6.1,
-	"scale": 1
+	"scale": 0.7
 }

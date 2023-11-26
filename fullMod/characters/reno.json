@@ -1,43 +1,10 @@
 {
 	"animations": [
 		{
-			"offsets": [
-				0,
-				0
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "idle",
-			"indices": [],
-			"name": "Idle"
-		},
-		{
-			"offsets": [
-				142,
-				85
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "singUP",
-			"indices": [],
-			"name": "Up"
-		},
-		{
-			"offsets": [
-				-8,
-				-154
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "singDOWN",
-			"indices": [],
-			"name": "Down"
-		},
-		{
 			"loop": false,
 			"offsets": [
-				40,
-				5
+				2,
+				-3
 			],
 			"anim": "singLEFT",
 			"fps": 24,
@@ -47,20 +14,64 @@
 		{
 			"loop": false,
 			"offsets": [
-				97,
-				-1
+				-108,
+				2
 			],
 			"anim": "singRIGHT",
 			"fps": 24,
 			"name": "Right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-14,
+				43
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "Up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				9,
+				-27
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "Down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "danceRight",
+			"fps": 24,
+			"name": "Idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "danceLeft",
+			"fps": 24,
+			"name": "Idle",
 			"indices": []
 		}
 	],
 	"no_antialiasing": false,
 	"image": "characters/reno",
 	"position": [
-		110,
-		40
+		-10,
+		-170
 	],
 	"healthicon": "reno",
 	"flip_x": false,
@@ -70,9 +81,9 @@
 		0
 	],
 	"camera_position": [
-		0,
-		0
+		60,
+		160
 	],
 	"sing_duration": 6.1,
-	"scale": 1
+	"scale": 0.7
 }

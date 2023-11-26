@@ -3,13 +3,14 @@
 	"difficulties": "Normal",
 	"hideFreeplay": false,
 	"weekBackground": "street",
+	"bgSong": "raining_terror",
 	"freeplayColor": [
 		146,
 		113,
 		253
 	],
 	"weekBefore": "weekR",
-	"startUnlocked": false,
+	"startUnlocked": true,
 	"weekCharacters": [
 		"reno",
 		"bf",
@@ -20,29 +21,29 @@
 			"pourin",
 			"dsreno",
 			[
-				195,
-				40,
-				200
+				118,
+				61,
+				182
 			]
 		],
 		[
-			"coolio remix",
+			"standby",
 			"dsreno",
 			[
-				195,
-				40,
-				200
+				118,
+				61,
+				182
 			]
 		],
 		[
-			"epicer ending",
-			"dsreno",
-			[
-				195,
-				40,
-				200
-			]
-		]
+            "Dysarthria",
+            "dysreno",
+            [
+                66,
+	            140,
+	            35
+            ]
+        ]
 	],
 	"hideStoryMode": false,
 	"weekName": "Custom Week",

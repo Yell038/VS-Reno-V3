@@ -1,0 +1,45 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "danceRight",
+			"indices": [],
+			"name": "Idle"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "danceLeft",
+			"indices": [],
+			"name": "Idle"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/renonewwtf",
+	"position": [
+		60,
+		-40
+	],
+	"healthicon": "reno",
+	"flip_x": false,
+	"healthbar_colors": [
+		62,
+		205,
+		62
+	],
+	"camera_position": [
+		90,
+		-20
+	],
+	"sing_duration": 6.1,
+	"scale": 1
+}

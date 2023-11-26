@@ -2,5 +2,6 @@
 	"name": "VS. Reno..?",
 	"description": "Is this even the right one?",
 	"restart":true,
+	"runsGlobally": true,
 	"color": [0, 150, 0]
 }

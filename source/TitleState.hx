@@ -645,12 +645,12 @@ class TitleState extends MusicBeatState
 					FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
 					FlxG.sound.music.fadeIn(4, 0, 0.7);
 				case 2:
-					createCoolText(['Yell038', 'Gallant1330', 'Superboy In-Game', 'progremer']);
+					createCoolText(['Yell038', 'Gallant1330', 'Superboy In-Game', 'Telmex Cedric']);
 				// credTextShit.visible = true;
 				case 3:
 					addMoreText('itsnotpikachu');
-					addMoreText('ref');
-					addMoreText('zayzoon');
+					addMoreText('JCC');
+					addMoreText('Hollow Skies');
 				case 4:
 					addMoreText('present');
 				// credTextShit.text += '\npresent...';

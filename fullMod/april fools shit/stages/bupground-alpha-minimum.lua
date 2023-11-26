@@ -1,5 +1,5 @@
 function onCreatePost()
-	makeLuaSprite('normalBG','',-1280,-720)
+	makeLuaSprite('normalBG','',-500,-720)
 	makeGraphic('normalBG',1280*3,720*3,'0xFFFFFFFF')
 	addLuaSprite('normalBG')
 	
@@ -17,4 +17,17 @@ function makeAStaticSpr(name, path, posx, posy, scale, sfx, sfy)
 	setProperty(name .. '.active', false)
 	setProperty(name .. '.antialiasing', true)
 	addLuaSprite(name, false)
+end
+
+---
+--- @param elapsed float
+---
+function onUpdate(elapsed)
+	if mustHitSection then
+		doTweenY("dad", "dad.scale", 5, 0.2, "cubeOut")
+		doTweenY("boyfriend", "boyfriend.scale", 1, 0.5, "cubeOut")
+	else
+		doTweenY("dad", "dad.scale", 0.8, 0.5, "cubeOut")
+		doTweenY("boyfriend", "boyfriend.scale", 5, 0.2, "cubeOut")
+	end
 end

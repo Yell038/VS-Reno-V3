@@ -38,7 +38,7 @@ function onEvent(name, value1, value2)
 			doTweenY('UnderLap2', 'LowerBar(UnderLap)', LowerBar - Distance, Speed, 'QuadOut')
 
 			for Tweens = 0,7 do 
-				noteTweenY('MoveIn(UnderLap)'..Tweens, Tweens, (StrumY + Distance) - 35, Speed, 'QuadOut')
+				--noteTweenY('MoveIn(UnderLap)'..Tweens, Tweens, (StrumY + Distance) - 35, Speed, 'QuadOut')
 
 				for Alphas = 1,8 do
 					doTweenAlpha('Alpha(UnderLap)'..Alphas, HudAssets[Index], 0, Speed - 0.1)
@@ -57,7 +57,7 @@ function onEvent(name, value1, value2)
 			doTweenY('UnderLap2', 'LowerBar(UnderLap)', LowerBar - Distance, Speed, 'QuadOut')
 
 				for Tweens = 0,7 do 
-					noteTweenY('MoveIn(UnderLap)'..Tweens, Tweens, (StrumY - Distance) + 35, Speed, 'QuadOut')
+					--noteTweenY('MoveIn(UnderLap)'..Tweens, Tweens, (StrumY - Distance) + 35, Speed, 'QuadOut')
 			
 					for Alphas = 1,8 do
 						doTweenAlpha('Alpha(UnderLap)'..Alphas, HudAssets[Index], 0, Speed - 0.1)
@@ -77,7 +77,7 @@ function onEvent(name, value1, value2)
 			doTweenY('UnderLap2', 'LowerBar(UnderLap)', LowerBar, Speed, 'QuadIn')
 
 			for Tweens = 0,7 do 
-				noteTweenY('MoveOut(UnderLap)'..Tweens, Tweens, StrumY , Speed, 'QuadIn')
+				--noteTweenY('MoveOut(UnderLap)'..Tweens, Tweens, StrumY , Speed, 'QuadIn')
 			
 				for Alphas = 1,8 do
 					doTweenAlpha('Alpha(UnderLap)'..Alphas, HudAssets[Index], 1, Speed + 0.1)

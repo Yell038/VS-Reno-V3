@@ -1,21 +1,32 @@
 {
 	"animations": [
 		{
-			"offsets": [
-				0,
-				0
-			],
 			"loop": false,
+			"offsets": [
+				2,
+				-3
+			],
+			"anim": "singLEFT",
 			"fps": 24,
-			"anim": "idle",
-			"indices": [],
-			"name": "Idle"
+			"name": "Left",
+			"indices": []
 		},
 		{
 			"loop": false,
 			"offsets": [
-				142,
-				85
+				-108,
+				2
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "Right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-14,
+				43
 			],
 			"anim": "singUP",
 			"fps": 24,
@@ -25,8 +36,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				-8,
-				-154
+				9,
+				-27
 			],
 			"anim": "singDOWN",
 			"fps": 24,
@@ -34,33 +45,33 @@
 			"indices": []
 		},
 		{
-			"offsets": [
-				40,
-				5
-			],
-			"indices": [],
-			"fps": 24,
-			"anim": "singLEFT",
 			"loop": false,
-			"name": "Left"
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "danceRight",
+			"fps": 24,
+			"name": "Idle",
+			"indices": []
 		},
 		{
-			"offsets": [
-				97,
-				-1
-			],
-			"indices": [],
-			"fps": 24,
-			"anim": "singRIGHT",
 			"loop": false,
-			"name": "Right"
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "danceLeft",
+			"fps": 24,
+			"name": "Idle",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/yourmom",
+	"image": "characters/renoNight",
 	"position": [
-		110,
-		150
+		-10,
+		-170
 	],
 	"healthicon": "reno",
 	"flip_x": false,
@@ -70,9 +81,9 @@
 		0
 	],
 	"camera_position": [
-		0,
-		70
+		60,
+		160
 	],
 	"sing_duration": 6.1,
-	"scale": 1
+	"scale": 0.7
 }

@@ -5,74 +5,44 @@
 				0,
 				0
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "idle",
-			"loop": false,
+			"indices": [],
 			"name": "Idle"
 		},
 		{
 			"offsets": [
-				3,
-				-13
+				0,
+				0
 			],
-			"indices": [],
+			"loop": true,
 			"fps": 24,
-			"anim": "singLEFT",
-			"loop": false,
-			"name": "Left"
-		},
-		{
-			"offsets": [
-				-3,
-				-12
+			"anim": "idle-loop",
+			"indices": [
+				12,
+				13
 			],
-			"indices": [],
-			"fps": 24,
-			"anim": "singRIGHT",
-			"loop": false,
-			"name": "Right"
-		},
-		{
-			"offsets": [
-				10,
-				-46
-			],
-			"indices": [],
-			"fps": 24,
-			"anim": "singDOWN",
-			"loop": false,
-			"name": "Down"
-		},
-		{
-			"offsets": [
-				-3,
-				38
-			],
-			"indices": [],
-			"fps": 24,
-			"anim": "singUP",
-			"loop": false,
-			"name": "Up"
+			"name": "Idle"
 		}
 	],
 	"no_antialiasing": false,
 	"image": "characters/dysReno",
 	"position": [
 		0,
-		120
+		-150
 	],
 	"healthicon": "dysreno",
 	"flip_x": false,
 	"healthbar_colors": [
-		66,
-		140,
-		35
+		25,
+		93,
+		45
 	],
 	"camera_position": [
-		0,
-		0
+		60,
+		180
 	],
 	"sing_duration": 6.1,
-	"scale": 1
+	"scale": 0.7
 }

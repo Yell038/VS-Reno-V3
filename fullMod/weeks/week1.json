@@ -1,0 +1,32 @@
+{
+	"storyName": "Street Crowd",
+	"difficulties": "Normal",
+	"hideFreeplay": false,
+	"weekBackground": "street",
+	"weekBefore": "tutorial",
+	"freeplayColor": [
+		62,
+		205,
+		62
+	],
+	"startUnlocked": true,
+	"hideStoryMode": false,
+	"songs": [
+		[
+			"unexpected-brawl",
+			"dad",
+			[
+				62,
+				205,
+				62
+			]
+		]
+	],
+	"weekCharacters": [
+		"",
+		"bf",
+		"gf"
+	],
+	"hiddenUntilUnlocked": false,
+	"weekName": "Reno Week"
+}

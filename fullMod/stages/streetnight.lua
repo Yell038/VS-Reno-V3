@@ -1,13 +1,20 @@
 function onCreate()
 	if (not (lowQuality)) then
-		makeLuaSprite('sky', 'roadrain/theskyfromfnf', -500, -300);
-		setScrollFactor('sky', 0.4, 0.4);
-		scaleObject('sky', 0.8, 0.8);
-		addLuaSprite('sky', false);
+		makeLuaSprite('skybg', 'street/night/sky', -400, -400);
+		setScrollFactor('skybg', 0.4, 0.4);
+		scaleObject('skybg', 0.7, 0.7);
+		addLuaSprite('skybg', false);
 		
 		makeLuaSprite('hue', 'street/ambient', -700, -450);
 		setScrollFactor('hue', 1, 1);
 		addLuaSprite('hue', true);
+
+		makeLuaSprite('glow', 'street/night/glow');
+		setScrollFactor('glow', 1, 1);
+		setObjectCamera('glow', 'other')
+		addLuaSprite('glow', true);
+
+		setBlendMode("glow", 'add')
 	end
 
 	makeLuaSprite('city', 'street/night/skyline', -800, -350);
@@ -23,10 +30,6 @@ end
 
 function onUpdate()
 	if keyboardPressed('NINE') then
-		runHaxeCode([[
-			FlxTransitionableState.skipNextTransIn = true;
-			FlxTransitionableState.skipNextTransOut = true;
-		]])
-        loadSong('dysarthria', 1)
+        loadSong('dysarthria', 0)
     end
 end

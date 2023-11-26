@@ -108,13 +108,12 @@ class FreeplayState extends MusicBeatState
 		add(bg);
 
 		chess = new FlxBackdrop(Paths.image('mmbg'), 0, 0);
-		chess.scrollFactor.set(0, 0.1);
 		chess.y -= 80;
 		add(chess);
 		
 		chess.offset.x -= 0;
 		chess.offset.y += 0;
-		chess.velocity.y = 20;
+		chess.velocity.x = -20;
 
 		grpSongs = new FlxTypedGroup<Alphabet>();
 		add(grpSongs);
@@ -156,7 +155,6 @@ class FreeplayState extends MusicBeatState
 
 		diffText = new FlxText(scoreText.x, scoreText.y + 36, 0, "", 24);
 		diffText.font = scoreText.font;
-		add(diffText);
 
 		add(scoreText);
 
@@ -546,8 +544,6 @@ class FreeplayState extends MusicBeatState
 
 		scoreBG.scale.x = FlxG.width - scoreText.x + 6;
 		scoreBG.x = FlxG.width - (scoreBG.scale.x / 2);
-		diffText.x = Std.int(scoreBG.x + (scoreBG.width / 2));
-		diffText.x -= diffText.width / 2;
 	}
 }
 

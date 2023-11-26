@@ -2,6 +2,7 @@ package;
 
 import Sys.sleep;
 import discord_rpc.DiscordRpc;
+import lime.app.Application;
 
 #if LUA_ALLOWED
 import llua.Lua;
@@ -33,6 +34,26 @@ class DiscordClient
 
 		DiscordRpc.shutdown();
 	}
+	
+	public static function check()
+		{
+			if(!ClientPrefs.discordRPC)
+			{
+				if(isInitialized) shutdown();
+				isInitialized = false;
+			}
+			else start();
+		}
+		
+		public static function start()
+		{
+			if (!isInitialized && ClientPrefs.discordRPC) {
+				initialize();
+				Application.current.window.onClose.add(function() {
+					shutdown();
+				});
+			}
+		}
 	
 	public static function shutdown()
 	{

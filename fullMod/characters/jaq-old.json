@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-24,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Idle"
+		},
+		{
+			"offsets": [
+				26,
+				-1
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Left"
+		},
+		{
+			"offsets": [
+				-138,
+				-10
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Down"
+		},
+		{
+			"offsets": [
+				-167,
+				34
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Up"
+		},
+		{
+			"offsets": [
+				-149,
+				-6
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Right"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/jaq-old",
+	"position": [
+		-60,
+		80
+	],
+	"healthicon": "dsreno",
+	"flip_x": false,
+	"healthbar_colors": [
+		118,
+		61,
+		182
+	],
+	"camera_position": [
+		130,
+		0
+	],
+	"sing_duration": 6.1,
+	"scale": 1
+}

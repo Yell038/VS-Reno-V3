@@ -1,6 +1,6 @@
 {
 	"storyName": "Your New Week",
-	"difficulties": "",
+	"difficulties": "Normal",
 	"hideFreeplay": false,
 	"weekBackground": "stage",
 	"weekBefore": "tutorial",

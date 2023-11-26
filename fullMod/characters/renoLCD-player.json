@@ -2,19 +2,30 @@
 	"animations": [
 		{
 			"offsets": [
-				0,
-				0
+				91,
+				2
 			],
 			"loop": false,
 			"fps": 24,
-			"anim": "idle",
+			"anim": "singLEFT",
 			"indices": [],
-			"name": "Idle"
+			"name": "Right"
 		},
 		{
 			"offsets": [
-				2,
-				40
+				-10,
+				-3
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Left"
+		},
+		{
+			"offsets": [
+				60,
+				43
 			],
 			"loop": false,
 			"fps": 24,
@@ -23,44 +34,44 @@
 			"name": "Up"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				30,
-				-80
+				71,
+				-27
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "singDOWN",
-			"fps": 24,
-			"name": "Down",
-			"indices": []
+			"indices": [],
+			"name": "Down"
 		},
 		{
 			"offsets": [
-				104,
-				-20
+				0,
+				0
 			],
-			"indices": [],
-			"fps": 24,
-			"anim": "singLEFT",
 			"loop": false,
-			"name": "Right"
+			"fps": 24,
+			"anim": "danceRight",
+			"indices": [],
+			"name": "Idle"
 		},
 		{
 			"offsets": [
-				-32,
-				-7
+				0,
+				0
 			],
-			"indices": [],
-			"fps": 24,
-			"anim": "singRIGHT",
 			"loop": false,
-			"name": "Left"
+			"fps": 24,
+			"anim": "danceLeft",
+			"indices": [],
+			"name": "Idle"
 		}
 	],
 	"no_antialiasing": false,
 	"image": "characters/renoLCD",
 	"position": [
-		110,
-		150
+		-10,
+		-170
 	],
 	"healthicon": "reno",
 	"flip_x": false,
@@ -70,9 +81,9 @@
 		0
 	],
 	"camera_position": [
-		20,
-		70
+		60,
+		160
 	],
 	"sing_duration": 6.1,
-	"scale": 1
+	"scale": 0.7
 }

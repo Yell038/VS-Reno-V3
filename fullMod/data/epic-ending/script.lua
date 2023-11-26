@@ -94,11 +94,10 @@ function onUpdate()
     end
 end
 function onEndSong()
-	if isStoryMode and difficulty == 2 then
 		if misses == 0 then
-			loadSong('dysarthria', 1)
+			loadSong('dysarthria', 0);
 			return Function_Stop
-		elseif not cool and isStoryMode and misses > 0 then
+		elseif not cool and misses > 1 and misses < 9 then
 			playMusic('tea-time', 1)
 			makeLuaSprite('end', 'endings/endingBasic', 0, 0);
 			setObjectCamera('end', 'camOther');
@@ -118,5 +117,4 @@ function onEndSong()
 			return Function_Stop;
 		end
 		return Function_Continue;
-	end
 end

@@ -28,7 +28,7 @@
 			]
 		]
 	],
-	"hiddenUntilUnlocked": true,
+	"hiddenUntilUnlocked": false,
 	"hideFreeplay": false,
 	"weekBackground": "road",
 	"difficulties": "Normal",
@@ -46,5 +46,5 @@
 	],
 	"hideStoryMode": false,
 	"weekBefore": "weekR",
-	"startUnlocked": false
+	"startUnlocked": true
 }

@@ -1,0 +1,5 @@
+flashes yo camera
+
+Value 1: color (MUST BE HEX!)
+
+Value 2: duration

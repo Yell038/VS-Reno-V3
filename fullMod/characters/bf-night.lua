@@ -1,7 +1,3 @@
-function onStartCountdown()
-    playAnim('boyfriend', 'three', true)
-end
-
 function onCountdownTick(swagCounter)
     if swagCounter == 0 then
         playAnim('boyfriend', 'three', true)
@@ -18,25 +14,6 @@ function onCountdownTick(swagCounter)
     end
 end
 
---call your 'Sick' animations 'singDIRECTION-alt '
---e.g. for the left anim, call it 'singLEFT-alt'
-
-function goodNoteHit(id, direction, noteType, isSustainNote)
-    if getPropertyFromGroup('notes', id, 'rating') == 'sick' and direction == 0 then
-        playAnim('boyfriend','singLEFT-alt','true')
-        triggerEvent('Alt Idle Animation', 'bf', '-alt');
-    elseif getPropertyFromGroup('notes', id, 'rating') == 'sick' and direction == 1 then
-        playAnim('boyfriend','singDOWN-alt','true')
-        triggerEvent('Alt Idle Animation', 'bf', '-alt');
-    elseif getPropertyFromGroup('notes', id, 'rating') == 'sick' and direction == 2 then
-        playAnim('boyfriend','singUP-alt','true')
-        triggerEvent('Alt Idle Animation', 'bf', '-alt');
-    elseif getPropertyFromGroup('notes', id, 'rating') == 'sick' and direction == 3 then
-        playAnim('boyfriend','singRIGHT-alt','true')
-        triggerEvent('Alt Idle Animation', 'bf', '-alt');
-    elseif getPropertyFromGroup('notes', id, 'rating') == 'sick' and isSustainNote then
-        triggerEvent('Alt Idle Animation', 'bf', '-alt');
-    else
-        triggerEvent('Alt Idle Animation', 'bf', '');
-    end
+function onCreatePost()
+    playAnim('boyfriend', 'three', true)
 end

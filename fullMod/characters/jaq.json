@@ -10,104 +10,25 @@
 			"fps": 24,
 			"name": "Idle",
 			"indices": []
-		},
-		{
-			"offsets": [
-				9,
-				-4
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "singLEFT",
-			"indices": [],
-			"name": "Left"
-		},
-		{
-			"offsets": [
-				-3,
-				-36
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "singDOWN",
-			"indices": [],
-			"name": "Down"
-		},
-		{
-			"offsets": [
-				-19,
-				-7
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "singRIGHT",
-			"indices": [],
-			"name": "Right"
-		},
-		{
-			"offsets": [
-				-16,
-				60
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "singUP",
-			"indices": [],
-			"name": "Up"
-		},
-		{
-			"loop": false,
-			"offsets": [
-				-19,
-				2
-			],
-			"anim": "renowhat",
-			"fps": 24,
-			"name": "what",
-			"indices": []
-		},
-		{
-			"loop": false,
-			"offsets": [
-				0,
-				2
-			],
-			"anim": "whatthe",
-			"fps": 24,
-			"name": "bruh",
-			"indices": []
-		},
-		{
-			"offsets": [
-				-19,
-				2
-			],
-			"indices": [
-				38
-			],
-			"fps": 24,
-			"anim": "renolooper",
-			"loop": true,
-			"name": "what"
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/renoDSides",
+	"image": "characters/jaq",
 	"position": [
-		0,
-		90
+		-40,
+		-240
 	],
 	"healthicon": "dsreno",
 	"flip_x": false,
 	"healthbar_colors": [
-		212,
-		94,
-		255
+		118,
+		61,
+		182
 	],
 	"camera_position": [
-		0,
-		0
+		130,
+		160
 	],
 	"sing_duration": 6.1,
-	"scale": 1
+	"scale": 0.7
 }

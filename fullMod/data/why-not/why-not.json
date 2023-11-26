@@ -1,6 +1,6 @@
 {
 	"song": {
-		"player1": "bf-lcd",
+		"player1": "bf-renoskin-lcd",
 		"player2": "renoLCD",
 		"events": [
 			[
@@ -3089,7 +3089,7 @@
 				"mustHitSection": true
 			}
 		],
-		"gfVersion": "gf-lcd",
+		"gfVersion": "emily-lcd",
 		"splashSkin": "noteSplashes",
 		"song": "why-not",
 		"validScore": true,

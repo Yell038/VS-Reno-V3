@@ -173,7 +173,7 @@
 		290
 	],
 	"healthicon": "gf",
-	"flip_x": false,
+	"flip_x": true,
 	"healthbar_colors": [
 		165,
 		0,

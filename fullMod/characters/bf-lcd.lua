@@ -1,7 +1,3 @@
-function onStartCountdown()
-    playAnim('boyfriend', 'three', true)
-end
-
 function onCountdownTick(swagCounter)
     if swagCounter == 0 then
         playAnim('boyfriend', 'three', true)
@@ -16,4 +12,8 @@ function onCountdownTick(swagCounter)
         playAnim('gf', 'cheer', true)
         playAnim('boyfriend', 'hey', true)
     end
+end
+
+function onCreatePost()
+    playAnim('boyfriend', 'three', true)
 end
