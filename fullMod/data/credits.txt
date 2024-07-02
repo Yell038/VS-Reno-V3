@@ -1,4 +1,4 @@
-Demo Work
+The Bean Team
 Yell038::yello::Creator of the mod, Main Composer, Charter, Artist, Coder, Animator::https://yell038.carrd.co::0xFFFFDD33
 Definetelynotarob::missing::Creator of Nema:: ::0xFFFFDD33
 Superboy in-GAME::superboy::Composer::https://youtube.com/channel/UCigeSMU_9ip1XljY5s3LYIw::0xFFFFDD33
@@ -11,8 +11,6 @@ robertboom::boom::Betatester, Coder::https://www.youtube.com/@robertboom::0xFF9A
 JustWorth::missing::Betatester::https://justworth.carrd.co::0xFF9A46C7
 CatLIEda1st::missing::Betatester::https://catlieda1st.carrd.co/::0xFF9A46C7
 Ref::ref::Former BG artist::https://twitter.com/JkReference::0xFFFF8400
-
-Other Bean Team Members
 progremer::progremer::Composer::https://youtube.com/@progremer::0xFF6B4400
 JCC::missing::BF VA::https://www.youtube.com/channel/UChvTRHjseJvHV_bD_wVSFxg::0xFFFFDD33
 Latitude_Gamer::missing::Female VA:: ::0xFFFFDD33
