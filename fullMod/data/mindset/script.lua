@@ -26,6 +26,7 @@ function onCreate()
 	setTextAlignment('JukeBoxText', 'left')
 	setObjectCamera('JukeBoxText', 'other')
 	setTextSize('JukeBoxText', IntroTextSize)
+	setProperty("JukeBoxText.antialiasing", getPropertyFromClass("ClientPrefs", "globalAntialiasing"))
 	addLuaText('JukeBoxText')
 	
 	--text for the song name
@@ -35,6 +36,7 @@ function onCreate()
 	setObjectCamera('JukeBoxSubText', 'other')
 	setTextSize('JukeBoxSubText', IntroSubTextSize)
     setTextColor('JukeBoxSubText', '80a8ff')
+	setProperty("JukeBoxSubText.antialiasing", getPropertyFromClass("ClientPrefs", "globalAntialiasing"))
 	addLuaText('JukeBoxSubText')
 end
 
@@ -47,18 +49,6 @@ function onSongStart()
 	doTweenX('MoveInFour', 'JukeBoxSubText', 10, 1, 'CircInOut')
 	
 	runTimer('JukeBoxWait', 3, 1)
-end
-
-local allowCountdown = false
-function onStartCountdown()
-	-- Block the first countdown and start a timer of 0.8 seconds to play the dialogue
-	if not allowCountdown and isStoryMode and not seenCutscene then
-		setProperty('inCutscene', true);
-		runTimer('startDialogue', 0.8);
-		allowCountdown = true;
-		return Function_Stop;
-	end
-	return Function_Continue;
 end
 
 function onTimerCompleted(tag, loops, loopsLeft)
@@ -83,35 +73,4 @@ end
 
 function onSkipDialogue(count)
 	-- triggered when you press Enter and skip a dialogue line that was still being typed, dialogue line starts with 1
-end
-
-local cool = false
-function onUpdate()
-    if cool then
-        if keyJustPressed('accept') then
-            endSong()
-        end
-    end
-end
-function onEndSong()
-		if not cool and misses >= 1 and misses < 9 then
-			playMusic('tea-time', 1)
-			makeLuaSprite('end', 'endings/endingBasic', 0, 0);
-			setObjectCamera('end', 'camOther');
-			setProperty('end.alpha', '0')
-			addLuaSprite('end', true);
-			doTweenAlpha('bad1', 'end', 1, 1, 'linear');
-			cool = true
-			return Function_Stop;
-		elseif not cool and misses > 9 then
-			playMusic('gameOver', 1)
-			makeLuaSprite('end', 'endings/TakeTheL', 0, 0);
-			setObjectCamera('end', 'camOther');
-			setProperty('end.alpha', '0')
-			addLuaSprite('end', true);
-			doTweenAlpha('bad1', 'end', 1, 1, 'linear');
-			cool = true
-			return Function_Stop;
-		end
-		return Function_Continue;
 end

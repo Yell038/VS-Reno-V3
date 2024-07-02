@@ -1,17 +1,3 @@
-playVideo = true;
-
-
-function onStartCountdown()
-	if isStoryMode and not seenCutscene then
-		if playVideo then --Video cutscene plays first
-			startVideo('jaq1'); --Play video file from "videos/" folder
-			playVideo = false;
-			return Function_Stop; --Prevents the song from starting naturally
-		end
-	end
-	return Function_Continue; --Played video and dialogue, now the song can start normally
-end
-
 function onCreate()
     makeLuaSprite("blackback", '', 0, 0)
     makeGraphic("blackback", 3000, 2000, '000000')
@@ -28,6 +14,20 @@ function onCreatePost()
     setProperty("iconP1.alpha", 0)
     setProperty("iconP2.alpha", 0)
     setProperty("scoreTxt.alpha", 0)
+
+    setTextString("JukeBoxSubText", "pourin'")
+    setTextString("centerMark", "- pourin' -")
+
+    initLuaShader('rain')
+
+    
+	makeLuaSprite('rainshader', '', 0, 0);
+	setSpriteShader('rainshader','rain')
+    addHaxeLibrary("ShaderFilter", "openfl.filters")
+	runHaxeCode([[
+		trace(ShaderFilter);
+		game.camGame.setFilters([new ShaderFilter(game.getLuaObject("rainshader").shader)]);
+	]])
 end
 
 function onStepHit()

@@ -60,6 +60,7 @@ import StageData;
 import FunkinLua;
 import DialogueBoxPsych;
 import Conductor.Rating;
+import flixel_5_3_1.ParallaxSprite;
 
 #if !flash 
 import flixel.addons.display.FlxRuntimeShader;
@@ -465,10 +466,10 @@ class PlayState extends MusicBeatState
 		switch (curStage)
 		{
 			case 'stage': //Week 1
-				var bg:BGSprite = new BGSprite('stageback', -600, -200, 0.9, 0.9);
+				var bg:BGSprite = new BGSprite('stageback', -600, -200, 0.6, 0.6);
 				add(bg);
 
-				var stageFront:BGSprite = new BGSprite('stagefront', -650, 600, 0.9, 0.9);
+				var stageFront:ParallaxSprite = new ParallaxSprite(-650, 600, Paths.image('stagefront')).fixate(0, 0, 0.8, 0.6, 1.4, 1.4, 'horizontal');
 				stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
 				stageFront.updateHitbox();
 				add(stageFront);

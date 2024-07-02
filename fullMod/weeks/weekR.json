@@ -4,6 +4,7 @@
 	"hideFreeplay": false,
 	"weekBackground": "street",
 	"weekBefore": "tutorial",
+	"bgSong": "clean_vibes",
 	"freeplayColor": [
 		62,
 		205,
@@ -13,7 +14,7 @@
 	"hideStoryMode": false,
 	"songs": [
 		[
-			"coolio",
+			"reno",
 			"reno",
 			[
 				62,
@@ -22,7 +23,7 @@
 			]
 		],
 		[
-			"slick",
+			"coolio",
 			"reno",
 			[
 				62,

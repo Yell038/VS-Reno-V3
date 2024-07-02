@@ -10,6 +10,50 @@
 			"fps": 24,
 			"name": "Idle",
 			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				-8
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "Left",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-15,
+				-8
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Right"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				10,
+				-32
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "Down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-15,
+				52
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "Up",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,
@@ -21,9 +65,9 @@
 	"healthicon": "dsreno",
 	"flip_x": false,
 	"healthbar_colors": [
-		118,
-		61,
-		182
+		60,
+		0,
+		130
 	],
 	"camera_position": [
 		130,

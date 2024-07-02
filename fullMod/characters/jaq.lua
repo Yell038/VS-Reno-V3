@@ -26,6 +26,7 @@ function onCreate()
 	setTextAlignment('JukeBoxText', 'left')
 	setObjectCamera('JukeBoxText', 'other')
 	setTextSize('JukeBoxText', IntroTextSize)
+	setProperty("JukeBoxText.antialiasing", getPropertyFromClass("ClientPrefs", "globalAntialiasing"))
 	addLuaText('JukeBoxText')
 	
 	--text for the song name
@@ -35,6 +36,7 @@ function onCreate()
 	setObjectCamera('JukeBoxSubText', 'other')
 	setTextSize('JukeBoxSubText', IntroSubTextSize)
     setTextColor('JukeBoxSubText', 'df99ff')
+	setProperty("JukeBoxSubText.antialiasing", getPropertyFromClass("ClientPrefs", "globalAntialiasing"))
 	addLuaText('JukeBoxSubText')
 end
 

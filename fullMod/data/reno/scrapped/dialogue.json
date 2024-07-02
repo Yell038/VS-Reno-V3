@@ -1,0 +1,124 @@
+{
+	"dialogue": [
+		{
+			"expression": "talk",
+			"text": "So yeah and I was like-",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "confused",
+			"text": "wh",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.005,
+			"sound": ""
+		},
+		{
+			"expression": "confused",
+			"text": "Who the-",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.005,
+			"sound": ""
+		},
+		{
+			"sound": "",
+			"speed": 0.1,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "confused",
+			"text": "Who the hell are you?"
+		},
+		{
+			"expression": "confused",
+			"text": "uhhhh...",
+			"boxState": "normal",
+			"portrait": "gf",
+			"speed": 0.09,
+			"sound": ""
+		},
+		{
+			"expression": "confused",
+			"text": "hello?",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "pissed",
+			"text": "Alright, come on. Speak up!",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "talk",
+			"text": "...",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "talk",
+			"text": "come on. it's not hard.",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "talk",
+			"text": "calm down, he probably can't speak!",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"expression": "confused",
+			"text": "thats possible????",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "talk",
+			"text": "well then.",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "pissed",
+			"text": "rap me now because i am the main protagonist of the hit game friday night funkin and you are now required to sing or else this mod is boring and a waste of time",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "confused",
+			"text": "bf, are you okay?",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "excited",
+			"text": "beep"
+		}
+	]
+}

@@ -1,89 +1,89 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
-				2,
-				-3
+				0,
+				0
 			],
+			"loop": false,
+			"fps": 24,
+			"anim": "danceRight",
+			"indices": [],
+			"name": "RENO IDLE"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "danceLeft",
+			"indices": [],
+			"name": "RENO IDLE"
+		},
+		{
+			"offsets": [
+				-4,
+				1
+			],
+			"loop": false,
+			"fps": 24,
 			"anim": "singLEFT",
-			"fps": 24,
-			"name": "Left",
-			"indices": []
+			"indices": [],
+			"name": "RENO LEFT"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				-108,
-				2
+				9,
+				-33
 			],
-			"anim": "singRIGHT",
+			"loop": false,
 			"fps": 24,
-			"name": "Right",
-			"indices": []
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "RENO DOWN"
 		},
 		{
 			"loop": false,
 			"offsets": [
-				-14,
-				43
+				-3,
+				30
 			],
 			"anim": "singUP",
 			"fps": 24,
-			"name": "Up",
+			"name": "RENO UP",
 			"indices": []
 		},
 		{
-			"loop": false,
 			"offsets": [
-				9,
-				-27
+				-4,
+				-17
 			],
-			"anim": "singDOWN",
+			"indices": [],
 			"fps": 24,
-			"name": "Down",
-			"indices": []
-		},
-		{
+			"anim": "singRIGHT",
 			"loop": false,
-			"offsets": [
-				0,
-				0
-			],
-			"anim": "danceRight",
-			"fps": 24,
-			"name": "Idle",
-			"indices": []
-		},
-		{
-			"loop": false,
-			"offsets": [
-				0,
-				0
-			],
-			"anim": "danceLeft",
-			"fps": 24,
-			"name": "Idle",
-			"indices": []
+			"name": "RENO RIGHT"
 		}
 	],
 	"no_antialiasing": false,
 	"image": "characters/renoNight",
 	"position": [
-		-10,
-		-170
+		40,
+		-20
 	],
 	"healthicon": "reno",
 	"flip_x": false,
 	"healthbar_colors": [
-		45,
-		136,
-		0
+		0,
+		234,
+		90
 	],
 	"camera_position": [
-		60,
-		160
+		110,
+		-60
 	],
 	"sing_duration": 6.1,
-	"scale": 0.7
+	"scale": 1
 }

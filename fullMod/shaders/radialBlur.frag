@@ -3,7 +3,7 @@
 //https://www.shadertoy.com/view/XsfSDs
 	uniform float cx = 0.5; //center x (0.0 - 1.0)
 	uniform float cy = 0.5; //center y (0.0 - 1.0)
-    uniform float blurWidth = 0.5; // blurAmount 
+    uniform float blurWidth = 1; // blurAmount 
 	
 	const int nsamples = 30; //samples
 	

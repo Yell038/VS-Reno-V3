@@ -8,7 +8,7 @@ IntroTagWidth = 15	--Width of the box's tag thingy.
 --actual script
 function onCreatePost()
 	if stringStartsWith(dadName, 'reno') then
-		IntroTagColor = '2d8800'
+		IntroTagColor = '00ea5a'
     else if stringStartsWith(dadName, 'jaq') then
 		IntroTagColor = 'd45eff'
     else if stringStartsWith(dadName, 'nema') then
@@ -35,6 +35,7 @@ function onCreatePost()
 	setTextAlignment('JukeBoxText', 'left')
 	setObjectCamera('JukeBoxText', 'other')
 	setTextSize('JukeBoxText', IntroTextSize)
+	setProperty("JukeBoxText.antialiasing", getPropertyFromClass("ClientPrefs", "globalAntialiasing"))
 	addLuaText('JukeBoxText')
 	
 	--text for the song name
@@ -44,6 +45,7 @@ function onCreatePost()
 	setObjectCamera('JukeBoxSubText', 'other')
 	setTextSize('JukeBoxSubText', IntroSubTextSize)
 	setTextColor("JukeBoxSubText", IntroTagColor)
+	setProperty("JukeBoxSubText.antialiasing", getPropertyFromClass("ClientPrefs", "globalAntialiasing"))
 	addLuaText('JukeBoxSubText')
 end
 

@@ -41,7 +41,7 @@ function spawnSplash(x, y, noteData)
     local assetModifier = getFromClass("PlayState", "isPixelStage") and "pixel" or "base"
 
     makeLuaSprite(splashObj, "", x, y)
-    loadGraphic(splashObj, "noteSplashes", splashSize[1], splashSize[2])
+    loadGraphic(splashObj, "foreverSplashes", splashSize[1], splashSize[2])
     addAnimation(splashObj, "splosh1", {
         (noteData * 2 + 1),
         8 + (noteData * 2 + 1),

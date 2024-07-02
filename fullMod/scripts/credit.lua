@@ -14,6 +14,7 @@ function onCreatePost()
 	setTextBorder('credit', 1, '000000')
 	addLuaText('credit')
 	setObjectCamera('credit', 'other')
+	setProperty("credit.alpha", 0.5)
 
 	set("credit.antialiasing", getFromClass("ClientPrefs", "globalAntialiasing"))
 end

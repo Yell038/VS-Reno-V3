@@ -14,7 +14,7 @@ local characters = { -- The variable that stores the amount of characters that y
     },
     { 
         charName = 'playgf', -- The name of your character that can be used in functions like "setProperty('pico.scale.x', 400)" or "doTweenX('tag', 'pico', 300, 2.5, 'linear')"
-        characterName = 'gf_playable-charfix', -- The name of your .json character in the folder "characters"
+        characterName = 'gf_sprinklezV2', -- The name of your .json character in the folder "characters"
         x = 0, -- The X Pos of your character
         y = 100, -- The Y Pos of your character
         group = 'boyfriendGroup', -- The Group of your character, can be 'boyfriendGroup', 'dadGroup' or 'gfGroup' (DONT LEAVE THIS VALUE IN BLANK)

@@ -13,7 +13,6 @@ end
 function onCreatePost()
 	if shadersEnabled then
 	initLuaShader('radialBlur')
-
 	makeLuaSprite('shadertest', '', 0, 0);
 	setSpriteShader('shadertest','radialBlur')
 
